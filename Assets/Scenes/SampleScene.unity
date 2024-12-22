@@ -1996,6 +1996,9 @@ GameObject:
   - component: {fileID: 795749980}
   - component: {fileID: 795749979}
   - component: {fileID: 795749978}
+  - component: {fileID: 795749982}
+  - component: {fileID: 795749983}
+  - component: {fileID: 795749984}
   m_Layer: 0
   m_Name: Enemi
   m_TagString: Untagged
@@ -2019,8 +2022,8 @@ MonoBehaviour:
   radius: 1
   height: 2
   canMove: 1
-  maxSpeed: 1
-  gravity: {x: NaN, y: NaN, z: NaN}
+  maxSpeed: 3
+  gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -2028,7 +2031,7 @@ MonoBehaviour:
   repathRateCompatibility: NaN
   canSearchCompability: 0
   orientation: 1
-  enableRotation: 1
+  enableRotation: 0
   autoRepath:
     mode: 2
     interval: 0.5
@@ -2044,7 +2047,7 @@ MonoBehaviour:
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
-  constrainInsideGraph: 0
+  constrainInsideGraph: 1
 --- !u!114 &795749979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2140,6 +2143,71 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &795749982
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795749977}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!114 &795749983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795749977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9679e68a0f1144e79c664d9a11ca121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  target: {fileID: 809719983}
+--- !u!114 &795749984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795749977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8db1b9f4b9ba8d4a9c9f0b3ec41c3df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 1
+  timeAttack: 1
+  DPS: 20
+  gamer: {fileID: 809719983}
 --- !u!1 &809719978
 GameObject:
   m_ObjectHideFlags: 0
@@ -2175,7 +2243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 5
   Body: {fileID: 809719980}
-  HP: 0
+  HP: 100
 --- !u!50 &809719980
 Rigidbody2D:
   serializedVersion: 4
@@ -3236,10 +3304,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1728147027}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -413.3836, y: 176.5}
-  m_SizeDelta: {x: -896.2328, y: -409.08472}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 152.6164, y: -45.5}
+  m_SizeDelta: {x: 235.76721, y: 34.915283}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1239973235
 MonoBehaviour:
@@ -5306,10 +5374,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1728147027}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -271.075, y: 176.6}
-  m_SizeDelta: {x: -976.25, y: -394}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 294.925, y: -45.399994}
+  m_SizeDelta: {x: 155.75, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1896362223
 MonoBehaviour:
@@ -5440,10 +5508,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1728147027}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -370.625, y: 176.5}
-  m_SizeDelta: {x: -775.25, y: -394}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 195.375, y: -45.5}
+  m_SizeDelta: {x: 356.75, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1916598634
 MonoBehaviour:
@@ -5673,10 +5741,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1728147027}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -413.3836, y: 176.5}
-  m_SizeDelta: {x: -896.2328, y: -409.08472}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 152.6164, y: -45.5}
+  m_SizeDelta: {x: 235.76721, y: 34.915283}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1994975789
 MonoBehaviour:
@@ -5698,11 +5766,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
